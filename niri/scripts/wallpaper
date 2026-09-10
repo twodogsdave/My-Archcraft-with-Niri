@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2026 Aditya Shakya <adi1090x@gmail.com>
+##
+## Set Wallpaper
+
+WALLPAPER='/home/dave/Pictures/wallpapers/flat_and_urban.jpg'
+
+# Replace any existing swaybg. Theme changes used to spawn another copy
+# every click, so dozens of wallpaper layers stacked up.
+if pgrep -x swaybg >/dev/null 2>&1; then
+	pkill -TERM -x swaybg
+	while pgrep -x swaybg >/dev/null 2>&1; do
+		sleep 0.05
+	done
+fi
+
+exec swaybg --output '*' --mode fill --image "$WALLPAPER"
+
