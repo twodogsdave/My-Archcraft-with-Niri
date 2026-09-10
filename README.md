@@ -18,4 +18,4 @@ Screenshot
 
 Wallpaper
 
-![preview](./wallpaper.jpg)
+![wallpaper](./wallpaper.jpg)
