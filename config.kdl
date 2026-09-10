@@ -207,16 +207,16 @@ layout {
         on
         width 4
         //-FR-AC
-        active-color "#5A549A"
+        active-color "#155E9E"
         //-FR-IAC
-        inactive-color "#0c1b41"
+        inactive-color "#19173d"
         //-FR-UC
-        urgent-color "#4C316E"
+        urgent-color "#284D46"
 
         //-FR-CGS
-        active-gradient from="#5A549A" to="#3D4A97" angle=90
-        inactive-gradient from="#0c1b41" to="#0d142b" angle=90
-        urgent-gradient from="#4C316E" to="#304F97" angle=90
+        active-gradient from="#155E9E" to="#F0B758" angle=90
+        inactive-gradient from="#19173d" to="#13122a" angle=90
+        urgent-gradient from="#284D46" to="#26B173" angle=90
     }
 
     // ------------------------
@@ -225,16 +225,16 @@ layout {
         off
         width 4
         //-BD-AC
-        active-color "#5A549A"
+        active-color "#155E9E"
         //-BD-IAC
-        inactive-color "#0c1b41"
+        inactive-color "#19173d"
         //-BD-UC
-        urgent-color "#4C316E"
+        urgent-color "#284D46"
 
         //-BD-CGS
-        //active-gradient from="#5A549A" to="#3D4A97" angle=90 relative-to="workspace-view"
-        //inactive-gradient from="#0c1b41" to="#0d142b" angle=90 relative-to="workspace-view" in="srgb-linear"
-        //urgent-gradient from="#4C316E" to="#304F97" angle=90
+        //active-gradient from="#155E9E" to="#F0B758" angle=90 relative-to="workspace-view"
+        //inactive-gradient from="#19173d" to="#13122a" angle=90 relative-to="workspace-view" in="srgb-linear"
+        //urgent-gradient from="#284D46" to="#26B173" angle=90
     }
 
     // ------------------------
@@ -264,16 +264,16 @@ layout {
         corner-radius 12
 
         //-TI-AC
-        active-color "#5A549A"
+        active-color "#155E9E"
         //-TI-IAC
-        inactive-color "#0c1b41"
+        inactive-color "#19173d"
         //-TI-UC
-        urgent-color "#4C316E"
+        urgent-color "#284D46"
 
         //-TI-CGS
-        //active-gradient from="#5A549A" to="#3D4A97" angle=90
-        //inactive-gradient from="#0c1b41" to="#0d142b" angle=90
-        //urgent-gradient from="#4C316E" to="#304F97" angle=90
+        //active-gradient from="#155E9E" to="#F0B758" angle=90
+        //inactive-gradient from="#19173d" to="#13122a" angle=90
+        //urgent-gradient from="#284D46" to="#26B173" angle=90
     }
 
     // ------------------------
@@ -283,10 +283,10 @@ layout {
         on
 
         //-IH-CS
-        //color "#5A549A80"
+        //color "#155E9E80"
 
         //-IH-CGS
-        gradient from="#5A549A80" to="#3D4A9780" angle=45
+        gradient from="#155E9E80" to="#F0B75880" angle=45
     }
 
     // ------------------------
@@ -465,7 +465,7 @@ window-rule {
     match title="^About$"
     match app-id=r#"^thunar$"# title="^Rename.*$"
     
-  match title=r#"^Prefe.*|.*file.*|.*File.*|.*evento.*|edit.*|Crea.*|Cerca.*|Passw.*|Duplica.*|Chiudi.*|Propriet.*|Elimina.*|Close.*|Esegui.*|Cestina.*|Monta|Salve.*|.*Selez.*|labwc-tweaks|.*found.*|.*rimovibile.*|.*Promem.*$"#
+  match title=r#"^Prefe.*|.*file.*|.*File.*|.*Chrome.*|.*chrome.*|.*evento.*|edit.*|Crea.*|Cerca.*|Passw.*|Duplica.*|Chiudi.*|Propriet.*|Elimina.*|Close.*|Esegui.*|Cestina.*|Monta|Salve.*|.*Selez.*|labwc-tweaks|.*found.*|.*rimovibile.*|.*Promem.*$"#
   
     open-floating true
 }
@@ -561,6 +561,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="(?i)vesktop"
+    open-on-workspace "3"
+}
+
+window-rule {
     match app-id="(?i)spotify"
     open-on-workspace "4"
 }
@@ -653,6 +658,9 @@ layer-rule {
 layer-rule {
     match namespace="^wallpaper$"
     place-within-backdrop true
+    background-effect {
+        blur true
+    }
 }
 
 // --------------------------------------------------------------------------------------
@@ -690,9 +698,9 @@ recent-windows {
 
     highlight {
         //-RW-AC
-        active-color "#5A549Aff"
+        active-color "#155E9Eff"
         //-RW-UC
-        urgent-color "#4C316Eff"
+        urgent-color "#284D46ff"
 
         padding 30
         corner-radius 10
@@ -764,7 +772,9 @@ binds {
     //Mod+T            hotkey-overlay-title="Open foot in fullscreen mode" { spawn "~/.config/niri/scripts/foot" "-F"; }
     
     // --------------------------------------------------------------------------------------
-    
+    // --------------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------
+        
     // ┌─┐┌─┐┌─┐┬  ┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
     // ├─┤├─┘├─┘│  ││  ├─┤ │ ││ ││││└─┐
     // ┴ ┴┴  ┴  ┴─┘┴└─┘┴ ┴ ┴ ┴└─┘┘└┘└─┘
@@ -773,14 +783,32 @@ binds {
     Mod+Shift+F hotkey-overlay-title="Open file manager (thunar)" { spawn "thunar"; }
     Mod+Shift+E hotkey-overlay-title="Open text editor (geany)"   { spawn "geany"; }
     Mod+Shift+W hotkey-overlay-title="Open web browser (firefox)" { spawn "firefox"; }
-    
-    Alt+P hotkey-overlay-title="GrabberShooter" { spawn "~/bin/grabbershooter-grim.sh"; }
-    
+    Mod+Shift+D hotkey-overlay-title="Open discord desktop (vesktop)" { spawn "vesktop"; }
     Mod+Shift+M hotkey-overlay-title="Open Spotify" {spawn "sh" "-c" "niri msg action focus-workspace 4 && spotify &"; }
+    
+    Alt+P hotkey-overlay-title="GrabberShooter"              { spawn "~/bin/grabbershooter-grim.sh"; }
+    ALT+N hotkey-overlay-title="Edit Niri Config File"       { spawn "geany" "/home/dave/.config/niri/config.kdl"; }
+    Alt+Ctrl+T  hotkey-overlay-title="Open tmux multiplexer" { spawn "~/.config/niri/scripts/alacritty" "-e" "mytmux"; }
+         
     Mod+Shift+Ctrl+S hotkey-overlay-title="Open Steam" {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run steam &"; }
-    Mod+Shift+Ctrl+M hotkey-overlay-title="Open Minecraft" {spawn "sh" "-c" "niri msg action focus-workspace 5 && minecraft-launcher &"; } 
+    Mod+Shift+Ctrl+M hotkey-overlay-title="Open Minecraft" {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run minecraft-launcher &"; } 
     Mod+Shift+Ctrl+O hotkey-overlay-title="Open Openspades" {spawn-sh "cd /home/dave/GIT/openspades/build/bin && prime-run ./openspades"; }
     
+    Ctrl+Alt+A   hotkey-overlay-title="Run wiremix in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "wiremix"; }
+    Ctrl+Alt+V   hotkey-overlay-title="Run bpytop in terminal"    { spawn "~/.config/niri/scripts/alacritty" "-e" "bpytop"; }
+    Ctrl+Alt+E   hotkey-overlay-title="Run cava in terminal"      { spawn "~/.config/niri/scripts/alacritty" "-e" "cava"; }
+    Ctrl+Alt+C   hotkey-overlay-title="Run cmatrix in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "cmatrix -C green -u 9 -b -a"; }
+    Ctrl+Alt+H   hotkey-overlay-title="Run htop in terminal"      { spawn "~/.config/niri/scripts/alacritty" "-e" "htop"; }
+    Ctrl+Alt+M   hotkey-overlay-title="Run ncmpcpp in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "ncmpcpp"; }
+    Ctrl+Alt+X   hotkey-overlay-title="Run neofetch in terminal"  { spawn "~/bin/neofetch-term"; }
+    Ctrl+Alt+G   hotkey-overlay-title="Run nvtop in terminal"     { spawn "~/.config/niri/scripts/alacritty" "-e" "nvtop"; }
+    Ctrl+Alt+P   hotkey-overlay-title="Run pyradio in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "pyradio"; }
+    Ctrl+Alt+U   hotkey-overlay-title="Run update in terminal"    { spawn "~/bin/update-niri-term"; }
+    Ctrl+Alt+Z   hotkey-overlay-title="Run tty-clock in terminal" { spawn "~/.config/niri/scripts/alacritty" "-e" "tty-clock" "-c" "-C" "6" "-D"; }
+    
+           
+    // --------------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // --------------------------------------------------------------------------------------
 
     // -- Rofi Applets -- 
@@ -799,12 +827,6 @@ binds {
     //Mod+X      hotkey-overlay-title="Run wlogout"                      { spawn "~/.config/niri/scripts/wlogout"; }
     Mod+P        hotkey-overlay-title="Run colorpicker"                  { spawn "~/.config/niri/scripts/colorpicker"; }
     Ctrl+Alt+L   hotkey-overlay-title="Lock the Screen: selected"        { spawn "~/.config/niri/scripts/current_lock"; }
-
-    // -- CLI Tools --
-    Ctrl+Alt+V   hotkey-overlay-title="Run vim in terminal"     { spawn "~/.config/niri/scripts/alacritty" "-e" "vim"; }
-    Ctrl+Alt+R   hotkey-overlay-title="Run ranger in terminal"  { spawn "~/.config/niri/scripts/alacritty" "-e" "ranger"; }
-    Ctrl+Alt+H   hotkey-overlay-title="Run htop in terminal"    { spawn "~/.config/niri/scripts/alacritty" "-e" "htop"; }
-    Ctrl+Alt+M   hotkey-overlay-title="Run ncmpcpp in terminal" { spawn "~/.config/niri/scripts/alacritty" "-e" "ncmpcpp"; }
 
     // -- Function keys --
     XF86MonBrightnessUp   allow-when-locked=true { spawn "~/.config/niri/scripts/brightness" "--inc"; }
