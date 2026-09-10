@@ -14,8 +14,3 @@ If you want to try my dots, I suggest backing up your niri folder.
 Screenshot
 
 ![preview](./preview.png)
-
-
-Wallpaper
-
-![wallpaper](./wallpaper.jpg)
