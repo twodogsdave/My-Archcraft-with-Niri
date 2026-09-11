@@ -115,7 +115,7 @@ input {
     //disable-power-key-handling
     //warp-mouse-to-focus mode="center-xy"
     focus-follows-mouse max-scroll-amount="0%"
-    //workspace-auto-back-and-forth
+    workspace-auto-back-and-forth
 
     mod-key        "Super"
     mod-key-nested "Alt"
@@ -178,7 +178,7 @@ output "eDP-2" {
 // Do not remove '//-AB-CD' comments. These are here for theming scripts.
 
 layout {
-    gaps 16
+    gaps 12
     center-focused-column "never"
     always-center-single-column
     //empty-workspace-above-first
@@ -205,36 +205,36 @@ layout {
     focus-ring {
         // off
         on
-        width 4
+        width 2
         //-FR-AC
-        active-color "#6A9696"
+        active-color "#16E4F0"
         //-FR-IAC
-        inactive-color "#242428"
+        inactive-color "#122035"
         //-FR-UC
-        urgent-color "#315D66"
+        urgent-color "#207B7E"
 
         //-FR-CGS
-        active-gradient from="#6A9696" to="#B69F64" angle=90
-        inactive-gradient from="#242428" to="#19191b" angle=90
-        urgent-gradient from="#315D66" to="#667974" angle=90
+        active-gradient from="#16E4F0" to="#E0BB4A" angle=90
+        inactive-gradient from="#122035" to="#0f1622" angle=90
+        urgent-gradient from="#207B7E" to="#AE411F" angle=90
     }
 
     // ------------------------
 
     border {
-        off
-        width 4
+        on
+        width 1
         //-BD-AC
-        active-color "#6A9696"
+        active-color "#16E4F0"
         //-BD-IAC
-        inactive-color "#242428"
+        inactive-color "#122035"
         //-BD-UC
-        urgent-color "#315D66"
+        urgent-color "#207B7E"
 
         //-BD-CGS
-        //active-gradient from="#6A9696" to="#B69F64" angle=90 relative-to="workspace-view"
-        //inactive-gradient from="#242428" to="#19191b" angle=90 relative-to="workspace-view" in="srgb-linear"
-        //urgent-gradient from="#315D66" to="#667974" angle=90
+        //active-gradient from="#16E4F0" to="#E0BB4A" angle=90 relative-to="workspace-view"
+        //inactive-gradient from="#122035" to="#0f1622" angle=90 relative-to="workspace-view" in="srgb-linear"
+        //urgent-gradient from="#207B7E" to="#AE411F" angle=90
     }
 
     // ------------------------
@@ -264,16 +264,16 @@ layout {
         corner-radius 12
 
         //-TI-AC
-        active-color "#6A9696"
+        active-color "#16E4F0"
         //-TI-IAC
-        inactive-color "#242428"
+        inactive-color "#122035"
         //-TI-UC
-        urgent-color "#315D66"
+        urgent-color "#207B7E"
 
         //-TI-CGS
-        //active-gradient from="#6A9696" to="#B69F64" angle=90
-        //inactive-gradient from="#242428" to="#19191b" angle=90
-        //urgent-gradient from="#315D66" to="#667974" angle=90
+        //active-gradient from="#16E4F0" to="#E0BB4A" angle=90
+        //inactive-gradient from="#122035" to="#0f1622" angle=90
+        //urgent-gradient from="#207B7E" to="#AE411F" angle=90
     }
 
     // ------------------------
@@ -283,10 +283,10 @@ layout {
         on
 
         //-IH-CS
-        //color "#6A969680"
+        //color "#16E4F080"
 
         //-IH-CGS
-        gradient from="#6A969680" to="#B69F6480" angle=45
+        gradient from="#16E4F080" to="#E0BB4A80" angle=45
     }
 
     // ------------------------
@@ -480,6 +480,10 @@ window-rule {
     match app-id="^alacritty-fullscreen$"
     match app-id="^geany$"
     match app-id="^thunar$"
+    match app-id="^firefox$"
+    match app-id="^vesktop$"
+    match app-id="^Spotify$"
+    match app-id="^steam$"
 
     background-effect {
         blur true
@@ -490,6 +494,10 @@ window-rule {
 window-rule {
     match app-id="^geany$"
     match app-id="^thunar$"
+    //match app-id="^firefox$"
+    match app-id="^vesktop$"
+    match app-id="^Spotify$"
+    //match app-id="^steam$"
     opacity 0.80
 }
 
@@ -553,6 +561,14 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
     open-maximized-to-edges false
+}
+
+window-rule {
+    match app-id="firefox"
+    match app-id="vesktop"
+    match app-id="Spotify"
+    match app-id="steam"
+    open-maximized true
 }
 
 window-rule {
@@ -698,9 +714,9 @@ recent-windows {
 
     highlight {
         //-RW-AC
-        active-color "#6A9696ff"
+        active-color "#16E4F0ff"
         //-RW-UC
-        urgent-color "#315D66ff"
+        urgent-color "#207B7Eff"
 
         padding 30
         corner-radius 10
@@ -874,16 +890,16 @@ binds {
     // -- Niri : Windows --
 
     // Close the focused window
-    Mod+Shift+Q { close-window; }
+    Mod+Shift+Q repeat=false { close-window; }
 
     // Toggle fullscreen on the focused window
     //Mod+F { fullscreen-window; }
-    Mod+F { maximize-column; }
-    Mod+Alt+F { fullscreen-window; }
+    Mod+F repeat=false { maximize-column; }
+    Mod+Alt+F repeat=false { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Ctrl+F repeat=false { expand-column-to-available-width; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }

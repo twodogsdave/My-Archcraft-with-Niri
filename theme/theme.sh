@@ -180,6 +180,43 @@ apply_wallpaper() {
 		"$DIR/scripts/wallpaper"
 
 	run_bg bash "$DIR/scripts/wallpaper"
+	
+	SDDM_BG="/usr/share/sddm/themes/archcraft-custom/Backgrounds/background"
+
+	SDDM_BG="/usr/share/sddm/themes/archcraft-custom/Backgrounds/background"
+
+	magick "$wallpaper" \
+		-gaussian-blur 0x18 \
+		-modulate 82,117,100 \
+		-brightness-contrast 0x-11 \
+		"$SDDM_BG"
+	
+	# Adjust if your file is named differently
+	source "$(dirname "$0")/current.bash"
+	
+	SDDM_CONF="/usr/share/sddm/themes/archcraft-custom/theme.conf"
+
+		# Use color1 from this theme; strip quotes
+		accent="${color1//\"/}"
+		accent="${accent//\'/}"
+		accent="${accent%% *}"   # Drop anything after the hex if the line has a comment
+
+if [[ "$accent" != \#* ]]; then
+    echo "sddm: color1 is empty or not a hex color: '$accent'" >&2
+else
+    sed -i \
+        -e "s|^LoginButtonBackgroundColor=.*|LoginButtonBackgroundColor=\"${accent}\"|" \
+        -e "s|^DropdownSelectedBackgroundColor=.*|DropdownSelectedBackgroundColor=\"${accent}\"|" \
+        -e "s|^HighlightBackgroundColor=.*|HighlightBackgroundColor=\"${accent}\"|" \
+        -e "s|^HighlightBorderColor=.*|HighlightBorderColor=\"${accent}\"|" \
+        -e "s|^HoverUserIconColor=.*|HoverUserIconColor=\"${accent}\"|" \
+        -e "s|^HoverPasswordIconColor=.*|HoverPasswordIconColor=\"${accent}\"|" \
+        -e "s|^HoverSystemButtonsIconsColor=.*|HoverSystemButtonsIconsColor=\"${accent}\"|" \
+        -e "s|^HoverSessionButtonTextColor=.*|HoverSessionButtonTextColor=\"${accent}\"|" \
+        -e "s|^HoverVirtualKeyboardButtonTextColor=.*|HoverVirtualKeyboardButtonTextColor=\"${accent}\"|" \
+        "$SDDM_CONF"
+fi
+
 }
 
 apply_alacritty() {
