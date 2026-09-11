@@ -207,16 +207,16 @@ layout {
         on
         width 4
         //-FR-AC
-        active-color "#155E9E"
+        active-color "#6A9696"
         //-FR-IAC
-        inactive-color "#19173d"
+        inactive-color "#242428"
         //-FR-UC
-        urgent-color "#284D46"
+        urgent-color "#315D66"
 
         //-FR-CGS
-        active-gradient from="#155E9E" to="#F0B758" angle=90
-        inactive-gradient from="#19173d" to="#13122a" angle=90
-        urgent-gradient from="#284D46" to="#26B173" angle=90
+        active-gradient from="#6A9696" to="#B69F64" angle=90
+        inactive-gradient from="#242428" to="#19191b" angle=90
+        urgent-gradient from="#315D66" to="#667974" angle=90
     }
 
     // ------------------------
@@ -225,16 +225,16 @@ layout {
         off
         width 4
         //-BD-AC
-        active-color "#155E9E"
+        active-color "#6A9696"
         //-BD-IAC
-        inactive-color "#19173d"
+        inactive-color "#242428"
         //-BD-UC
-        urgent-color "#284D46"
+        urgent-color "#315D66"
 
         //-BD-CGS
-        //active-gradient from="#155E9E" to="#F0B758" angle=90 relative-to="workspace-view"
-        //inactive-gradient from="#19173d" to="#13122a" angle=90 relative-to="workspace-view" in="srgb-linear"
-        //urgent-gradient from="#284D46" to="#26B173" angle=90
+        //active-gradient from="#6A9696" to="#B69F64" angle=90 relative-to="workspace-view"
+        //inactive-gradient from="#242428" to="#19191b" angle=90 relative-to="workspace-view" in="srgb-linear"
+        //urgent-gradient from="#315D66" to="#667974" angle=90
     }
 
     // ------------------------
@@ -264,16 +264,16 @@ layout {
         corner-radius 12
 
         //-TI-AC
-        active-color "#155E9E"
+        active-color "#6A9696"
         //-TI-IAC
-        inactive-color "#19173d"
+        inactive-color "#242428"
         //-TI-UC
-        urgent-color "#284D46"
+        urgent-color "#315D66"
 
         //-TI-CGS
-        //active-gradient from="#155E9E" to="#F0B758" angle=90
-        //inactive-gradient from="#19173d" to="#13122a" angle=90
-        //urgent-gradient from="#284D46" to="#26B173" angle=90
+        //active-gradient from="#6A9696" to="#B69F64" angle=90
+        //inactive-gradient from="#242428" to="#19191b" angle=90
+        //urgent-gradient from="#315D66" to="#667974" angle=90
     }
 
     // ------------------------
@@ -283,10 +283,10 @@ layout {
         on
 
         //-IH-CS
-        //color "#155E9E80"
+        //color "#6A969680"
 
         //-IH-CGS
-        gradient from="#155E9E80" to="#F0B75880" angle=45
+        gradient from="#6A969680" to="#B69F6480" angle=45
     }
 
     // ------------------------
@@ -698,9 +698,9 @@ recent-windows {
 
     highlight {
         //-RW-AC
-        active-color "#155E9Eff"
+        active-color "#6A9696ff"
         //-RW-UC
-        urgent-color "#284D46ff"
+        urgent-color "#315D66ff"
 
         padding 30
         corner-radius 10
@@ -780,33 +780,43 @@ binds {
     // ┴ ┴┴  ┴  ┴─┘┴└─┘┴ ┴ ┴ ┴└─┘┘└┘└─┘
 
     // -- Applications --
-    Mod+Shift+F hotkey-overlay-title="Open file manager (thunar)" { spawn "thunar"; }
-    Mod+Shift+E hotkey-overlay-title="Open text editor (geany)"   { spawn "geany"; }
-    Mod+Shift+W hotkey-overlay-title="Open web browser (firefox)" { spawn "firefox"; }
+    Mod+Shift+F hotkey-overlay-title="Open file manager (thunar)"     { spawn "thunar"; }
+    Mod+Shift+E hotkey-overlay-title="Open text editor (geany)"       { spawn "geany"; }
+    Mod+Shift+W hotkey-overlay-title="Open web browser (firefox)"     { spawn "firefox"; }
     Mod+Shift+D hotkey-overlay-title="Open discord desktop (vesktop)" { spawn "vesktop"; }
-    Mod+Shift+M hotkey-overlay-title="Open Spotify" {spawn "sh" "-c" "niri msg action focus-workspace 4 && spotify &"; }
+    Mod+Shift+M hotkey-overlay-title="Open Spotify"                   {spawn "sh" "-c" "niri msg action focus-workspace 4 && spotify &"; }
     
-    Alt+P hotkey-overlay-title="GrabberShooter"              { spawn "~/bin/grabbershooter-grim.sh"; }
-    ALT+N hotkey-overlay-title="Edit Niri Config File"       { spawn "geany" "/home/dave/.config/niri/config.kdl"; }
-    Alt+Ctrl+T  hotkey-overlay-title="Open tmux multiplexer" { spawn "~/.config/niri/scripts/alacritty" "-e" "mytmux"; }
+    Alt+E             hotkey-overlay-title="Open EasyEffects"            { spawn "easyeffects"; }
+    Alt+P             hotkey-overlay-title="GrabberShooter"              { spawn "~/bin/grabbershooter-grim.sh"; }
+    Alt+Ctrl+T        hotkey-overlay-title="Open tmux multiplexer"       { spawn "~/.config/niri/scripts/alacritty" "-e" "mytmux"; }
+    Mod+Shift+Ctrl+G  hotkey-overlay-title="Open web browser (firefox)"  { spawn "firefox" "gmail.com"; }   
+    Mod+Shift+Ctrl+C  hotkey-overlay-title="Open web browser (firefox)"  { spawn "firefox" "calendar.google.com"; } 
+    Mod+Shift+Ctrl+W  hotkey-overlay-title="Waifu"                       { spawn "~/bin/waifu"; }
+    
+    
+    
+    Ctrl+Shift+1   hotkey-overlay-title="Edit .bash_aliases File"  { spawn "geany" "/home/dave/.bash_aliases"; }
+    Ctrl+Shift+2   hotkey-overlay-title="Edit .bashrc File"        { spawn "geany" "/home/dave/.bashrc"; }
+    Ctrl+Shift+3   hotkey-overlay-title="Edit Niri Config File"    { spawn "geany" "/home/dave/.config/niri/config.kdl"; }
+    Ctrl+Shift+4   hotkey-overlay-title="Edit waybar File"         { spawn "geany" "/home/dave/.config/niri/waybar/modules"; }
          
-    Mod+Shift+Ctrl+S hotkey-overlay-title="Open Steam" {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run steam &"; }
-    Mod+Shift+Ctrl+M hotkey-overlay-title="Open Minecraft" {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run minecraft-launcher &"; } 
-    Mod+Shift+Ctrl+O hotkey-overlay-title="Open Openspades" {spawn-sh "cd /home/dave/GIT/openspades/build/bin && prime-run ./openspades"; }
+    Mod+Shift+Ctrl+S hotkey-overlay-title="Open Steam"      {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run steam &"; }
+    Mod+Shift+Ctrl+M hotkey-overlay-title="Open Minecraft"  {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run minecraft-launcher &"; } 
+    Mod+Shift+Ctrl+O hotkey-overlay-title="Open Openspades" {spawn-sh "cd /home/dave/GIT/openspades/build/bin && prime-run ./openspades &"; }
     
     Ctrl+Alt+A   hotkey-overlay-title="Run wiremix in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "wiremix"; }
     Ctrl+Alt+V   hotkey-overlay-title="Run bpytop in terminal"    { spawn "~/.config/niri/scripts/alacritty" "-e" "bpytop"; }
     Ctrl+Alt+E   hotkey-overlay-title="Run cava in terminal"      { spawn "~/.config/niri/scripts/alacritty" "-e" "cava"; }
     Ctrl+Alt+C   hotkey-overlay-title="Run cmatrix in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "cmatrix -C green -u 9 -b -a"; }
     Ctrl+Alt+H   hotkey-overlay-title="Run htop in terminal"      { spawn "~/.config/niri/scripts/alacritty" "-e" "htop"; }
-    Ctrl+Alt+M   hotkey-overlay-title="Run ncmpcpp in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "ncmpcpp"; }
+    Ctrl+Alt+N   hotkey-overlay-title="Run ncmpcpp in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "ncmpcpp"; }
     Ctrl+Alt+X   hotkey-overlay-title="Run neofetch in terminal"  { spawn "~/bin/neofetch-term"; }
     Ctrl+Alt+G   hotkey-overlay-title="Run nvtop in terminal"     { spawn "~/.config/niri/scripts/alacritty" "-e" "nvtop"; }
     Ctrl+Alt+P   hotkey-overlay-title="Run pyradio in terminal"   { spawn "~/.config/niri/scripts/alacritty" "-e" "pyradio"; }
-    Ctrl+Alt+U   hotkey-overlay-title="Run update in terminal"    { spawn "~/bin/update-niri-term"; }
     Ctrl+Alt+Z   hotkey-overlay-title="Run tty-clock in terminal" { spawn "~/.config/niri/scripts/alacritty" "-e" "tty-clock" "-c" "-C" "6" "-D"; }
     
-           
+    Mod+O { toggle-window-rule-opacity; }
+
     // --------------------------------------------------------------------------------------
     // --------------------------------------------------------------------------------------
     // --------------------------------------------------------------------------------------

@@ -1,14 +1,14 @@
 /** ********** Colors ********** **/
-@define-color background      #0A0918;
-@define-color background-alt1 #13122a;
-@define-color background-alt2 #19173d;
-@define-color foreground      #8fd6d5;
-@define-color selected        #155E9E;
-@define-color black           #0A0918;
-@define-color red             #284D46;
-@define-color green           #B9434D;
-@define-color yellow          #26B173;
-@define-color blue            #F0B758;
-@define-color magenta         #155E9E;
-@define-color cyan            #1A76CC;
-@define-color white           #8fd6d5;
+@define-color background      #0C0C0D;
+@define-color background-alt1 #19191b;
+@define-color background-alt2 #242428;
+@define-color foreground      #c2cac8;
+@define-color selected        #6A9696;
+@define-color black           #0C0C0D;
+@define-color red             #315D66;
+@define-color green           #53615F;
+@define-color yellow          #667974;
+@define-color blue            #B69F64;
+@define-color magenta         #6A9696;
+@define-color cyan            #5EB9B7;
+@define-color white           #c2cac8;
