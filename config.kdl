@@ -786,19 +786,19 @@ binds {
     Mod+Shift+D hotkey-overlay-title="Open discord desktop (vesktop)" { spawn "vesktop"; }
     Mod+Shift+M hotkey-overlay-title="Open Spotify"                   {spawn "sh" "-c" "niri msg action focus-workspace 4 && spotify &"; }
     
-    Alt+E             hotkey-overlay-title="Open EasyEffects"            { spawn "easyeffects"; }
-    Alt+P             hotkey-overlay-title="GrabberShooter"              { spawn "~/bin/grabbershooter-grim.sh"; }
-    Alt+Ctrl+T        hotkey-overlay-title="Open tmux multiplexer"       { spawn "~/.config/niri/scripts/alacritty" "-e" "mytmux"; }
-    Mod+Shift+Ctrl+G  hotkey-overlay-title="Open web browser (firefox)"  { spawn "firefox" "gmail.com"; }   
-    Mod+Shift+Ctrl+C  hotkey-overlay-title="Open web browser (firefox)"  { spawn "firefox" "calendar.google.com"; } 
-    Mod+Shift+Ctrl+W  hotkey-overlay-title="Waifu"                       { spawn "~/bin/waifu"; }
+    Alt+E             hotkey-overlay-title="Open EasyEffects"         { spawn "easyeffects"; }
+    Alt+P             hotkey-overlay-title="GrabberShooter"           { spawn "~/bin/grabbershooter-grim.sh"; }
+    Alt+Ctrl+T        hotkey-overlay-title="Open tmux multiplexer"    { spawn "~/.config/niri/scripts/alacritty" "-e" "mytmux"; }
+    Mod+Shift+Ctrl+G  hotkey-overlay-title="Open Gmail"               { spawn "firefox" "gmail.com"; }   
+    Mod+Shift+Ctrl+C  hotkey-overlay-title="Open Calendar"            { spawn "firefox" "calendar.google.com"; } 
+    Mod+Shift+Ctrl+W  hotkey-overlay-title="Waifu"                    { spawn "~/bin/waifu"; }
     
     
     
-    Ctrl+Shift+1   hotkey-overlay-title="Edit .bash_aliases File"  { spawn "geany" "/home/dave/.bash_aliases"; }
-    Ctrl+Shift+2   hotkey-overlay-title="Edit .bashrc File"        { spawn "geany" "/home/dave/.bashrc"; }
-    Ctrl+Shift+3   hotkey-overlay-title="Edit Niri Config File"    { spawn "geany" "/home/dave/.config/niri/config.kdl"; }
-    Ctrl+Shift+4   hotkey-overlay-title="Edit waybar File"         { spawn "geany" "/home/dave/.config/niri/waybar/modules"; }
+    Ctrl+Shift+1  hotkey-overlay-title="Edit .bash_aliases File" { spawn "geany" "/home/dave/.bash_aliases"; }
+    Ctrl+Shift+2  hotkey-overlay-title="Edit .bashrc File"       { spawn "geany" "/home/dave/.bashrc"; }
+    Ctrl+Shift+3  hotkey-overlay-title="Edit Niri Config File"   { spawn "geany" "/home/dave/.config/niri/config.kdl"; }
+    Ctrl+Shift+4  hotkey-overlay-title="Edit waybar File"        { spawn "geany" "/home/dave/.config/niri/waybar/modules"; }
          
     Mod+Shift+Ctrl+S hotkey-overlay-title="Open Steam"      {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run steam &"; }
     Mod+Shift+Ctrl+M hotkey-overlay-title="Open Minecraft"  {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run minecraft-launcher &"; } 
