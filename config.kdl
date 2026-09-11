@@ -792,9 +792,7 @@ binds {
     Mod+Shift+Ctrl+G  hotkey-overlay-title="Open Gmail"               { spawn "firefox" "gmail.com"; }   
     Mod+Shift+Ctrl+C  hotkey-overlay-title="Open Calendar"            { spawn "firefox" "calendar.google.com"; } 
     Mod+Shift+Ctrl+W  hotkey-overlay-title="Waifu"                    { spawn "~/bin/waifu"; }
-    
-    
-    
+        
     Ctrl+Shift+1  hotkey-overlay-title="Edit .bash_aliases File" { spawn "geany" "/home/dave/.bash_aliases"; }
     Ctrl+Shift+2  hotkey-overlay-title="Edit .bashrc File"       { spawn "geany" "/home/dave/.bashrc"; }
     Ctrl+Shift+3  hotkey-overlay-title="Edit Niri Config File"   { spawn "geany" "/home/dave/.config/niri/config.kdl"; }
