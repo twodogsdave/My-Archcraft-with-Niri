@@ -11,6 +11,12 @@ Ater installing Archcraft this time, with Niri, I did have a few quirks to work 
 
 If you want to try my dots, I suggest backing up your niri folder.
 
+-------------------------
+
 Screenshot
 
 ![preview](./preview.png)
+
+Screenshot (updated using gtk Material-DeepOcean and icons BeautyLine)
+
+![preview](./preview2.png)
