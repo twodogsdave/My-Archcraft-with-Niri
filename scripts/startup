@@ -41,6 +41,7 @@ run_bg ~/.config/niri/scripts/gtkthemes
 ## Applets & Services
 run nm-applet --indicator
 run mpd
+run easyeffects -w
 
 ## Polkit
 #run /usr/lib/xfce-polkit/xfce-polkit

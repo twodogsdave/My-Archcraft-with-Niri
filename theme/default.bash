@@ -28,8 +28,11 @@ color15='#bebec1'
 wallpaper="$HOME/.config/niri/wallpapers/wallpaper.jpg"
 
 # GTK Theme
-gtk_theme='Sweet-Dark'
-gtk_icons='Glassy'
+#gtk_theme='Sweet-Dark'
+#gtk_icons='Glassy'
+gtk_theme='Material-DeepOcean'
+gtk_icons='BeautyLine'
+
 gtk_font='Noto Sans 9'
 cursor_theme='Sweet'
 

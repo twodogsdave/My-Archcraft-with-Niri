@@ -4,10 +4,10 @@
 ##
 ## Set GTK Themes, Icons, Cursor and Fonts
 
-THEME='Sweet-Dark'
-ICONS='Glassy'
+THEME='Material-DeepOcean'
+ICONS='BeautyLine'
 FONT='Noto Sans 9'
-CURSOR='Sweet'
+CURSOR='Simple-Dark'
 
 SCHEMA='gsettings set org.gnome.desktop.interface'
 

@@ -27,9 +27,9 @@
     //"modules-center": [ "custom/spotify", "custom/sep", "custom/themes", "idle_inhibitor", "custom/lightmode", "tray" ],
     //"modules-right": [ "pulseaudio", "backlight", "bluetooth", "network", "battery", "clock", "custom/sep", "custom/power"],
     
-    "modules-left": [ "custom/menu", "custom/sep", "cpu", "memory", "disk", "idle_inhibitor", "custom/lightmode", "custom/voxtype", "tray" ],
+    "modules-left": [ "custom/menu", "custom/sep", "cpu", "memory", "disk", "idle_inhibitor", "custom/voxtype", "tray" ],
 	"modules-center": [ "custom/spotify", "custom/sep", "custom/themes" ],
-    "modules-right": [ "pulseaudio", "backlight", "bluetooth", "network", "battery", "clock", "custom/sep", "custom/power"],
+    "modules-right": [ "pulseaudio", "backlight", "bluetooth", "network", "battery", "clock"],
 
     //-- Type:2
     //"modules-left": ["custom/menu", "custom/sep", "niri/workspaces", ],
