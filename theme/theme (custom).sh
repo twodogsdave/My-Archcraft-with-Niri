@@ -181,17 +181,6 @@ apply_wallpaper() {
 
 	run_bg bash "$DIR/scripts/wallpaper"
 	
-## SDDM -----------------------------------------------------
-	
-## ███████╗██████╗ ██████╗ ███╗   ███╗
-## ██╔════╝██╔══██╗██╔══██╗████╗ ████║
-## ███████╗██║  ██║██║  ██║██╔████╔██║
-## ╚════██║██║  ██║██║  ██║██║╚██╔╝██║
-## ███████║██████╔╝██████╔╝██║ ╚═╝ ██║
-## ╚══════╝╚═════╝ ╚═════╝ ╚═╝     ╚═╝
-
-## Apply blur effects/color to wallpaper and then copy to SDDM login theme.
-	
 	SDDM_BG="/usr/share/sddm/themes/archcraft-custom/Backgrounds/background"
 
 	magick "$wallpaper" \
@@ -228,8 +217,6 @@ fi
 
 }
 
-## End of SDDM ----------------------------------------------
-
 apply_alacritty() {
 	write_if_changed "$PATH_ALAC/colors.toml" <<- EOF
 		## Colors configuration
@@ -257,8 +244,6 @@ apply_alacritty() {
 		cyan    = "${color14}"
 		white   = "${color15}"
 	EOF
-	sed -i 's|background = "*******"|background = "#121318"|' ~/.config/niri/alacritty/colors.toml
-	sed -i "s|background='*******'|background='#121318'|" ~/.config/niri/theme/current.bash
 }
 
 apply_foot() {

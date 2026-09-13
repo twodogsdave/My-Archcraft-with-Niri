@@ -73,18 +73,18 @@
 	// waybar-clock
     "clock": {
 		"interval": 60,
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "󰥔 {:%H:%M}",
-        "format-alt": "  {:%a, %b %e}"
+        "format-alt": "  {:%a, %b %d}",
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+			"mode": "month",
+			"format": {
+				"today": "<span color='#FFFFFF'><b>{}</b></span>",
+				},
+			},
     },
-
-	// waybar-cpu
-    "cpu": {
-         "interval": 5,
-         "format": "  {usage}%",
-    },
-           
-	// waybar-custom
+      
+	// waybar-themes
     "custom/themes": {
         "format": "",
         "tooltip": false,
@@ -118,6 +118,11 @@
          "format": "",
          "tooltip": false,
     },
+    
+    "custom/space": {
+         "format": " ",
+         "tooltip": false,
+    },
 
 	// waybar-disk
     "disk": {
@@ -130,6 +135,12 @@
          "interval": 10,
          "format": " {used:0.1f}G",
     },
+    
+    // waybar-cpu
+    "cpu": {
+         "interval": 5,
+         "format": "  {usage}%",
+    },
            
 	// waybar-spotify
     "custom/spotify": {
@@ -137,7 +148,7 @@
         "interval": 1,
         "format": "{}",
         "tooltip": true,
-        "max-length": 40,
+        "max-length": 50,
         "on-click": "playerctl -p spotify play-pause",
         "on-click-middle": "playerctl -p spotify previous",
         "on-click-right": "playerctl -p spotify next",
@@ -170,22 +181,48 @@
         "smooth-scrolling-threshold": 1,
     },
 
-	// waybar-network
-    "network": {
-		"interval": 5,
-        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
-        "format-wifi": "󰤨 {essid}",
-        "format-ethernet": " {ipaddr}/{cidr}",
-        "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "󰤭 Disconnected",
-        "format-disabled": "󰤭 Disabled",
-        //"format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
-        "tooltip-format": " {ifname} via {gwaddr}",
-        //"on-click": "[[ ! `pidof nm-connection-editor` ]] && nm-connection-editor || pkill nm-connection-e",
-        "on-click": "~/.config/niri/scripts/rofi_network",
+	// waybar-network — ethernet
+    "network#ethernet": {
+        "interval": 5,
+        "interface": "enp130s0",
+        "format-ethernet": " {ifname}",
+        "format-linked": " {ifname}",
+        "format-disconnected": "",
+        "tooltip-format-ethernet": " {ifname}\n{ipaddr}",
+        "tooltip-format-disconnected": "Ethernet disconnected",
+        "on-click": "~/.config/niri/scripts/rofi_network"
     },
 
-	// waybar-pulseaudio
+    // waybar-network — wifi
+    "network#wifi": {
+        "interval": 5,
+        "interface": "wl*",
+        "format-wifi": "󰤨 {essid}",
+        "format-disconnected": "󰤭 No WiFi",
+        "format-disabled": "󰤭 Disabled",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "󰤨 {essid} ({signalStrength}%)\n{ifname} {ipaddr}",
+        "tooltip-format-disconnected": "Connect to WiFi",
+        "on-click": "~/.config/niri/scripts/rofi_network"
+    },
+    
+    // waybar-updates
+    "custom/updates": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "interval": 1800,
+        "exec": "$HOME/.config/niri/scripts/updates.sh",
+        "format-icons": {
+            "has-updates": "󰚰",
+            "updated": ""
+        },
+        "tooltip": true,
+        "on-click": "~/.config/niri/scripts/alacritty -f yay -Syu; echo; read -n1 -p \"Done. Press any key…\"",
+        "on-click-right": "pkill -RTMIN+8 waybar",
+        "signal": 8
+    },
+
+    // waybar-pulseaudio
     "pulseaudio": {
         //"format": "{volume}% {icon} {format_source}",
         "format": "{icon} {volume}%",
@@ -206,7 +243,7 @@
         },
         "on-click": "pulsemixer --toggle-mute",
         "on-click-right": "pulsemixer --toggle-mute",
-        "smooth-scrolling-threshold": 1,
+        "smooth-scrolling-threshold": 1
     },
     
 	// waybar-niri-window
@@ -244,7 +281,7 @@
 		 "disable-markup": false,         
 		 "current-only": false,         
 		 //"on-update": "",         
-		 "expand": false,         
+		 "expand": false         
      },
 
 	// waybar-backlight-slider
@@ -288,6 +325,6 @@
 	// waybar-tray
     "tray": {
         "icon-size": 16,
-        "spacing": 10
+        "spacing": 8
     }
 }

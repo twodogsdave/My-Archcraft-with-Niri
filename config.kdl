@@ -117,8 +117,8 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
     workspace-auto-back-and-forth
 
-    mod-key        "Super"
-    mod-key-nested "Alt"
+    mod-key        	"Super"
+    mod-key-nested 	"Alt"
 }
 
 // --------------------------------------------------------------------------------------
@@ -206,16 +206,16 @@ layout {
         on
         width 4
         //-FR-AC
-        active-color "#AC43C8"
+        active-color "#7422A6"
         //-FR-IAC
-        inactive-color "#261345"
+        inactive-color "#330052"
         //-FR-UC
-        urgent-color "#6E1C8E"
+        urgent-color "#FE5A60"
 
         //-FR-CGS
-        active-gradient from="#AC43C8" to="#9728AC" angle=90
-        inactive-gradient from="#261345" to="#1b1030" angle=90
-        urgent-gradient from="#6E1C8E" to="#4F59A2" angle=90
+        active-gradient from="#7422A6" to="#7815BF" angle=90
+        inactive-gradient from="#330052" to="#220637" angle=90
+        urgent-gradient from="#FE5A60" to="#6A0E92" angle=90
     }
 
     // ------------------------
@@ -224,16 +224,16 @@ layout {
         off
         width 1
         //-BD-AC
-        active-color "#AC43C8"
+        active-color "#7422A6"
         //-BD-IAC
-        inactive-color "#261345"
+        inactive-color "#330052"
         //-BD-UC
-        urgent-color "#6E1C8E"
+        urgent-color "#FE5A60"
 
         //-BD-CGS
-        //active-gradient from="#AC43C8" to="#9728AC" angle=90 relative-to="workspace-view"
-        //inactive-gradient from="#261345" to="#1b1030" angle=90 relative-to="workspace-view" in="srgb-linear"
-        //urgent-gradient from="#6E1C8E" to="#4F59A2" angle=90
+        //active-gradient from="#7422A6" to="#7815BF" angle=90 relative-to="workspace-view"
+        //inactive-gradient from="#330052" to="#220637" angle=90 relative-to="workspace-view" in="srgb-linear"
+        //urgent-gradient from="#FE5A60" to="#6A0E92" angle=90
     }
 
     // ------------------------
@@ -262,16 +262,16 @@ layout {
         corner-radius 12
 
         //-TI-AC
-        active-color "#AC43C8"
+        active-color "#7422A6"
         //-TI-IAC
-        inactive-color "#261345"
+        inactive-color "#330052"
         //-TI-UC
-        urgent-color "#6E1C8E"
+        urgent-color "#FE5A60"
 
         //-TI-CGS
-        //active-gradient from="#AC43C8" to="#9728AC" angle=90
-        //inactive-gradient from="#261345" to="#1b1030" angle=90
-        //urgent-gradient from="#6E1C8E" to="#4F59A2" angle=90
+        //active-gradient from="#7422A6" to="#7815BF" angle=90
+        //inactive-gradient from="#330052" to="#220637" angle=90
+        //urgent-gradient from="#FE5A60" to="#6A0E92" angle=90
     }
 
     // ------------------------
@@ -280,10 +280,10 @@ layout {
         on
 
         //-IH-CS
-        //color "#AC43C880"
+        //color "#7422A680"
 
         //-IH-CGS
-        gradient from="#AC43C880" to="#9728AC80" angle=45
+        gradient from="#7422A680" to="#7815BF80" angle=45
     }
 
     // ------------------------
@@ -378,7 +378,7 @@ blur {
 
 animations {
     //off
-    //slowdown 3.0
+    slowdown 1.5
 
     workspace-switch {
         spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
@@ -455,6 +455,8 @@ window-rule {
     match app-id=r#"MPlayer$"#
     match app-id=r#"mpv$"#
     match app-id=r#"pia-vpn$"#
+    match app-id=r#"nwg-look$"#
+    match app-id=r#"easyeffects$"#
     match app-id=r#"transmission-qt$"#
     match app-id=r#"VirtualBox Manager$"#
     match app-id=r#"Qemu-system-x86_64$"#
@@ -464,7 +466,7 @@ window-rule {
     match title="^About$"
     match app-id=r#"^thunar$"# title="^Rename.*$"
     
-    match title=r#"^Prefe.*|.*file.*|.*File.*|.*Chrome.*|.*chrome.*|.*evento.*|edit.*|Crea.*|Cerca.*|Passw.*|Duplica.*|Chiudi.*|Propriet.*|Elimina.*|Close.*|Esegui.*|Cestina.*|Monta|Salve.*|.*Selez.*|labwc-tweaks|.*found.*|.*rimovibile.*|.*Promem.*$"#
+    //match title=r#"^Prefe.*|.*file.*|.*File.*|.*Chrome.*|.*chrome.*|.*evento.*|edit.*|Crea.*|Cerca.*|Passw.*|Duplica.*|Chiudi.*|Propriet.*|Elimina.*|Close.*|Esegui.*|Cestina.*|Monta|Salve.*|.*Selez.*|labwc-tweaks|.*found.*|.*rimovibile.*|.*Promem.*$"#
   
     open-floating true
 }
@@ -507,6 +509,13 @@ window-rule {
     //match app-id="^Spotify$"
     //match app-id="^steam$"
     opacity 0.80
+}
+
+// Make popups and dropdown menus opaque
+window-rule {
+    popups {
+        opacity 1.0
+    }
 }
 
 // These windows should never be transparent
@@ -730,9 +739,9 @@ recent-windows {
 
     highlight {
         //-RW-AC
-        active-color "#AC43C8ff"
+        active-color "#7422A6ff"
         //-RW-UC
-        urgent-color "#6E1C8Eff"
+        urgent-color "#FE5A60ff"
 
         padding 30
         corner-radius 10
@@ -828,7 +837,7 @@ binds {
     Ctrl+Shift+1  hotkey-overlay-title="Edit .bash_aliases File" { spawn "geany" "/home/dave/.bash_aliases"; }
     Ctrl+Shift+2  hotkey-overlay-title="Edit .bashrc File"       { spawn "geany" "/home/dave/.bashrc"; }
     Ctrl+Shift+3  hotkey-overlay-title="Edit Niri Config File"   { spawn "geany" "/home/dave/.config/niri/config.kdl"; }
-    Ctrl+Shift+4  hotkey-overlay-title="Edit waybar File"        { spawn "geany" "/home/dave/.config/niri/waybar/modules"; }
+    Ctrl+Shift+4  hotkey-overlay-title="Edit waybar Files"        { spawn "geany" "/home/dave/.config/niri/waybar/style.css" "/home/dave/.config/niri/waybar/modules" "/home/dave/.config/niri/waybar/config"; }
          
     Mod+Shift+Ctrl+S hotkey-overlay-title="Open Steam"      {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run steam &"; }
     Mod+Shift+Ctrl+M hotkey-overlay-title="Open Minecraft"  {spawn "sh" "-c" "niri msg action focus-workspace 5 && prime-run minecraft-launcher &"; } 

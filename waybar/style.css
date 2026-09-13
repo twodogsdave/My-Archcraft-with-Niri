@@ -24,10 +24,25 @@ window#waybar {
 #custom-menu {
 	background-color: @background-alt1;
 	color: @selected;
-	font-size: 18px;
+	font-size: 16px;
 	border-radius: 20px;
 	margin: 6px 0px 6px 6px;
 	padding: 2px 12px;
+}
+
+#custom-updates {
+    margin: 6px 0px 6px 6px;
+	padding: 2px 12px;
+}
+
+#custom-updates.updated {
+    color: #a6e3a1;
+}
+
+#custom-updates.has-updates {
+	font-size: 14px;
+	font-weight: 300;
+    color: @red;
 }
 
 #custom-themes {
@@ -44,6 +59,10 @@ window#waybar {
 #custom-sep {
 	color: @background-alt1;
 	margin: 0px 8px;
+}
+
+#custom-space {
+	margin: 0px 0px;
 }
 
 #custom-power, #custom-themes {
@@ -73,10 +92,10 @@ window#waybar {
 	color: @foreground;
 	border-radius: 20px;
 	margin: 6px 0px 6px 6px;
-	padding: 2px 12px;
+	padding: 2px 16px;
 }
 #custom-voxtype.recording {
-	background-color: @red;
+	background-color: @cyan;
 	color: @background;
 	animation: voxtype-pulse 1s ease-in-out infinite;
 }
@@ -102,7 +121,7 @@ window#waybar {
 	background-color: @green;
 	color: @background;
 	border-radius: 20px;
-	margin: 6px 0px 6px 6px ;
+	margin: 6px 0px 6px 2px ;
 	padding: 2px 12px;
 }
 #idle_inhibitor.deactivated {
@@ -323,8 +342,8 @@ window#waybar {
 #workspaces {
 	background-color: @background-alt1;
 	border-radius: 20px;
-	margin: 6px 0px ;
-	padding: 2px 12px;
+	margin: 6px 0px 6px 2px;
+	padding: 0px 0px;
 }
 #workspaces button{
 	color: @foreground;
@@ -374,4 +393,19 @@ window#waybar.hidden {
 #clock {
 	border-radius: 0px 20px 20px 0px;
 	padding: 2px 14px 2px 14px;
+}
+
+/* Styles the main background box of the tooltip */
+tooltip {
+    background: @background;          /* Dark background color */
+    border: 1px solid @foreground;    /* Border outline color */
+    border-radius: 10px;              /* Rounded corners */
+}
+
+/* Styles the text inside the tooltip */
+tooltip label {
+    font-family: "JetBrains Mono", "Symbols Nerd Font", Iosevka, archcraft, sans-serif;
+    font-size: 14px;
+    color: @foreground;               /* Text color */
+    padding: 4px;
 }
